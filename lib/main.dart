@@ -17,6 +17,7 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  bool entrar = true;
 
   @override
   Widget build(BuildContext context) {
@@ -25,9 +26,9 @@ class _LoginState extends State<Login> {
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: Colors.blue,
-        title: const Text(
-          "LOGIN",
-          style: TextStyle(
+        title: Text(
+          (entrar) ? "LOGIN" : "CADASTRO",
+          style: const TextStyle(
               color: Color.fromARGB(255, 255, 255, 255),
               fontSize: 18,
               fontWeight: FontWeight.w500),
@@ -103,19 +104,25 @@ class _LoginState extends State<Login> {
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(8),
                               )),
-                          child: const Text(
-                            "Entrar",
-                            style: TextStyle(
+                          child: Text(
+                            (entrar) ? "Entrar" : "Cadastrar",
+                            style: const TextStyle(
                               color: Colors.white,
                               fontSize: 20,
                             ),
                           )),
                     )),
                 TextButton(
-                    onPressed: () {},
-                    child: const Text(
-                      "Cadastre-se",
-                      style: TextStyle(
+                    onPressed: () {
+                      setState(() {
+                        entrar = !entrar;
+                      });
+                    },
+                    child: Text(
+                      (entrar)
+                          ? "Ainda não possui login? Cadastre-se"
+                          : "Já possui login? Entre",
+                      style: const TextStyle(
                         color: Colors.blue,
                         fontSize: 15,
                       ),
