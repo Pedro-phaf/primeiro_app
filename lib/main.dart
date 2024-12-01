@@ -17,6 +17,7 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,7 +35,7 @@ class _LoginState extends State<Login> {
       ),
       body: Center(
         child: SingleChildScrollView(
-          padding: EdgeInsets.fromLTRB(25, 0, 25, 0),
+          padding: const EdgeInsets.fromLTRB(25, 0, 25, 0),
           child: Form(
             child: Column(
               children: [
@@ -43,7 +44,9 @@ class _LoginState extends State<Login> {
                   color: Color.fromARGB(142, 0, 0, 0),
                   size: 111,
                 ),
-                SizedBox(height: 10,),
+                const SizedBox(
+                  height: 15,
+                ),
                 TextFormField(
                   decoration: InputDecoration(
                       hintText: "E-mail",
@@ -63,7 +66,9 @@ class _LoginState extends State<Login> {
                     fontSize: 16,
                   ),
                 ),
-SizedBox(height: 10,),
+                const SizedBox(
+                  height: 10,
+                ),
                 TextFormField(
                   decoration: InputDecoration(
                       hintText: "Senha",
@@ -84,6 +89,37 @@ SizedBox(height: 10,),
                   ),
                   obscureText: true,
                 ),
+                const SizedBox(
+                  height: 15,
+                ),
+                Padding(
+                    padding: const EdgeInsets.only(top: 10, bottom: 15),
+                    child: SizedBox(
+                      height: 50,
+                      child: ElevatedButton(
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.blue,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(8),
+                              )),
+                          child: const Text(
+                            "Entrar",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                            ),
+                          )),
+                    )),
+                TextButton(
+                    onPressed: () {},
+                    child: const Text(
+                      "Cadastre-se",
+                      style: TextStyle(
+                        color: Colors.blue,
+                        fontSize: 15,
+                      ),
+                    ))
               ],
             ),
           ),
