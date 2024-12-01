@@ -1,6 +1,6 @@
 # primeiro_app
 
-A new Flutter project.
+Desenvolvendo primeiro projeto com Flutter criando um mini sistema com Cadastro e Login.
 
 ## Getting Started
 
